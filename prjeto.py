@@ -1,4 +1,3 @@
-
 todos_conjuntos = []
 opcao = ' '
 sair = 'nao'
@@ -14,7 +13,7 @@ def menu_geral():
     print("[4] - Mostrar conjuntos")
     print("[5] - Apagar conjuntos")
     print("[6] - Unir conjuntos")
-    print("[7] - Checar conjunto")
+    print("[7] - Checar interseção de conjuntos")
 
 
 
@@ -98,6 +97,46 @@ def delete():
         else:
             pass
    
+def unir():
+    
+    print('Escolha dois conjuntos para unir')
+    pesquisa = []
+    unidos = []
+    for x in range(2):
+        conjunto = input(f'Conjunto {x+1}: ')
+        pesquisa.append(conjunto)
+    
+    for i in range(len(todos_conjuntos)):
+        if todos_conjuntos[i][0] == pesquisa[0]:
+            for item in todos_conjuntos[i]:
+                if not item == todos_conjuntos[i][0]:
+                    unidos.append(item)
+                else:
+                    pass
+            break
+        else:
+            pass
+
+    for b in range(len(todos_conjuntos)):
+        if todos_conjuntos[b][0] == pesquisa[1]:
+            for item in todos_conjuntos[b]:
+                if not item == todos_conjuntos[b][0]:
+                    if not item in unidos:
+                        unidos.append(item)
+                else:
+                    pass
+            break
+        else:
+            pass
+    print(unidos)
+
+
+
+
+
+
+
+
 while sair == 'nao':
     menu_geral()
     if opcao == 0:
@@ -112,6 +151,10 @@ while sair == 'nao':
         mostrar()
     elif opcao == 5:
         delete()
+    elif opcao == 6:
+        unir()
+    elif opcao == 7:
+        intersec()
 
 
 else:
