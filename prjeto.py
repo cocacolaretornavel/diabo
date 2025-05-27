@@ -130,6 +130,41 @@ def unir():
             pass
     print(unidos)
 
+def intersec():
+
+    elementos = []
+    intersecao = []
+
+    print('Escolha dois conjuntos para checar a interseção')
+    pesquisa = []
+
+    for x in range(2):
+        conjunto = input(f'Conjunto {x+1}: ')
+        pesquisa.append(conjunto)
+    
+    for i in range(len(todos_conjuntos)):
+        if todos_conjuntos[i][0] == pesquisa[0]:
+            for item in todos_conjuntos[i]:
+                if not item == todos_conjuntos[i][0]:
+                    elementos.append(item)
+                else:
+                    pass
+            break
+        else:
+            pass
+
+    for b in range(len(todos_conjuntos)):
+        if todos_conjuntos[b][0] == pesquisa[1]:
+            for item in todos_conjuntos[b]:
+                if not item == todos_conjuntos[b][0]:
+                    if item in elementos:
+                        intersecao.append(item)
+                else:
+                    pass
+            break
+        else:
+            pass
+    print(intersecao)
 
 
 
